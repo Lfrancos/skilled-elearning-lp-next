@@ -1,0 +1,11 @@
+.container {
+    padding: 20px;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(var(--color-blue-dark));
+    // position: absolute;
+    // bottom: 0px;
+}

@@ -1,0 +1,34 @@
+@use "../../styles/utils/_variables.module.scss" as *;
+
+.button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 65px;
+  cursor: pointer;
+  color: hsl(var(--color-gradient-pink))
+}
+.blue {
+  background-color: hsl(var(--color-blue-dark));
+  color: white;
+}
+.medium {
+    max-height: 48px;
+}
+.large {
+
+    height: 56px;
+    padding: 20px 30px;
+}
+
+.orangeGradient {
+    color: white;
+    background: var(--gradient-orange);
+//     background: rgb(2,0,36);
+// background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);
+}
+.blueGradient {
+    color: white;
+    background: var(--gradient-blue);
+}
