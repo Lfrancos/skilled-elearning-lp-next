@@ -1,0 +1,93 @@
+@use "../styles/utils/mixins" as *;
+@use "../styles/utils/variables.module" as *;
+
+.imageContainer {
+  width: 100%;
+  margin: 0 auto;
+  z-index: 1;
+  & .image {
+    width: fit-content;
+
+    margin: 0 auto;
+    z-index: 1;
+    @include breakingPoint($ipad) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 600px;
+      overflow: hidden;
+    }
+    @include breakingPoint($desktop) {
+        width: 800px;
+        height: 800px;
+    }
+
+
+  }
+}
+.nextImage {
+    @include breakingPoint($ipad) {
+        transform: translate(20%);
+        z-index: -1;
+    }
+  @include breakingPoint($desktop) {
+    transform: translate(30%, -5%);
+    }
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  @include breakingPoint($ipad) {
+    & {
+      display: flex;
+      max-width: 1110;
+      margin-bottom: 150px;
+    }
+    @include breakingPoint($desktop) {
+      & {
+        padding-top: 150px;
+        padding-bottom: 100px;
+      }
+    }
+  }
+}
+.card {
+  color: white;
+  background: var(--gradient-orange);
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 15px;
+  & p {
+    color: white;
+    margin: 10px;
+  }
+}
+
+.grid {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 350px;
+  @include breakingPoint($ipad) {
+    & {
+      max-width: 800px;
+    }
+  }
+  @include breakingPoint($desktop) {
+    & {
+      gap: 10px;
+      max-width: 2440px;
+    }
+  }
+}
+
+
+.flexChild {
+  min-width: 343px;
+  max-width: 350px;
+}

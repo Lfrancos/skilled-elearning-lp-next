@@ -1,11 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Footer } from "../components/common/Footer";
 import { Header } from "../components/common/Header";
 // import { LearningCard } from "../components/common/LearningCard";
 import { Button } from "./../components/common/Button";
-import styles from "./landingPage.module.scss";
+import styles from "./index.module.scss";
 import { CourseCard } from "../components/common/CourseCard";
 
 export default function Home() {
@@ -45,6 +45,17 @@ export default function Home() {
       icon: "/assets/icon-business.svg",
     },
   ]);
+  const [screenWidth, setScreenWidth] = useState(0);
+  useEffect(() => {
+    setScreenWidth(window.innerWidth)
+  }, [])
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      // return  window.innerWidth ;
+    };
+    window.addEventListener("resize", handleResize);
+  }, [screenWidth]);
 
   return (
     <div>
@@ -57,24 +68,49 @@ export default function Home() {
       </Head>
       <Header />
       <main>
-        <h1>Maximize skill, minimize budget</h1>
-        <p>
-          Our modern courses across a range of in-demand skills will give you
-          the knowledge you need to live the life you want.
-        </p>
-        <Button label="Get Started" size="large" color="orangeGradient" />
-        <div className={styles.imageContainer}>
-          <div className={styles.image}>
-            <Image
-              src="/assets/image-hero-mobile@2x.png"
-              width="300"
-              height="300"
-              alt="content"
-            />
+        <div className={styles.container}>
+          <div className={styles.containerText}>
+            <h1>Maximize skill, minimize budget</h1>
+            <p>
+              Our modern courses across a range of in-demand skills will give
+              you the knowledge you need to live the life you want.
+            </p>
+            <Button label="Get Started" size="large" color="orangeGradient" />
+          </div>
+          <div className={styles.imageContainer}>
+            <div className={styles.image}>
+              {screenWidth < 768 ? (
+                <Image
+                  className={styles.nextImage}
+                  src="/assets/image-hero-mobile@2x.png"
+                  width="300"
+                  height="300"
+                  alt="content"
+                />
+              ) : screenWidth < 1224 ? (
+                <div className={styles.nextImage}>
+                  <Image
+                    className={styles.nextImage}
+                    src="/assets/image-hero-tablet@2x.png"
+                    width="640"
+                    height="640"
+                    alt="content"
+                  />
+                </div>
+              ) : (
+                <Image
+                  className={styles.nextImage}
+                  src="/assets/image-hero-desktop@2x.png"
+                  width="991"
+                  height="991"
+                  alt="content"
+                />
+              )}
+            </div>
           </div>
         </div>
         <div className={styles.grid}>
-          <div className={styles.card}>
+          <div className={`${styles.card} ${styles.flexChild}`}>
             <p>Check out our most popular courses!</p>
           </div>
           {courses.map((course) => {

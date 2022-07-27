@@ -4,14 +4,22 @@
   font-size: 16px;
   font-weight: bold;
   padding: 15px 25px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 65px;
   cursor: pointer;
-  color: hsl(var(--color-gradient-pink))
+  color: hsl(var(--color-gradient-pink));
+}
+.base {
+  &:hover {
+    border-color: hsl(var(--color-gradient-pink));
+  }
 }
 .blue {
   background-color: hsl(var(--color-blue-dark));
   color: white;
+  &:hover {
+    background-color: hsla(var(--color-blue-dark), .7);
+  }
 }
 .medium {
     max-height: 48px;
@@ -25,10 +33,15 @@
 .orangeGradient {
     color: white;
     background: var(--gradient-orange);
-//     background: rgb(2,0,36);
-// background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%);
+    &:hover {
+      background: var(--gradient-orange-alpha);
+    }
 }
 .blueGradient {
     color: white;
     background: var(--gradient-blue);
+    &:hover {
+      background: var(--gradient-blue-alpha);
+
+    }
 }

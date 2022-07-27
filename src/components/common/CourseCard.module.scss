@@ -1,14 +1,28 @@
+@use '../../styles/utils/mixins' as *;
+@use '../../styles/utils/variables.module' as *;
+
 .container {
-    // margin: 30px;
     border-radius: 30px;
     padding: 20px 5px;
-    // &::after {
-    //     content: '';
-    //     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-
-    // }
+    @include breakingPoint($ipad) {
+        & {
+            padding: 20px;
+        }
+    }
 }
 .business {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
 }
+.crypto {
+    @include breakingPoint($ipad) {
+        & {
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+    }
+}
+
+.flexChild {
+    min-width: 343px;
+    max-width: 350px;
+  }

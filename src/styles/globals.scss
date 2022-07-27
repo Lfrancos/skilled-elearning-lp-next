@@ -10,12 +10,17 @@
     hsl(var(--color-gradient-orange)) 0%,
     hsl(var(--color-gradient-pink)) 100%
   );
+  --gradient-orange-alpha: linear-gradient(
+    180deg,
+    hsla(var(--color-gradient-orange), .7) 0%,
+    hsla(var(--color-gradient-pink), .7) 100%
+  );
   --gradient-blue: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
+  --gradient-blue-alpha: linear-gradient(180deg, hsla(237, 100%, 64%, .7) 0%, hsl(322, 87%, 55%, .7) 100%);
 }
 
 html,
 body {
-  // padding: 10px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -23,6 +28,9 @@ body {
 main {
   padding: 20px;
   padding-top: 0;
+  max-width: 1110px;
+  margin: 0 auto;
+  // position: relative;
 }
 h1 {
   margin-top: 0;

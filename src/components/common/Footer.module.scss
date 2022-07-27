@@ -1,11 +1,17 @@
+@use '../../styles/utils/variables.module' as *;
 .container {
-    padding: 20px;
-    height: 120px;
+    padding: 40px 20px;
     width: 100%;
+    margin: 0 auto;
+    background-color: hsl(var(--color-blue-dark));
+    margin-top: 40px;
+}
+.containerFlex {
+    width: 100%;
+    margin: auto auto;
     display: flex;
     justify-content: space-between;
+    align-self: center;
     align-items: center;
-    background-color: hsl(var(--color-blue-dark));
-    // position: absolute;
-    // bottom: 0px;
+    max-width: $desktop;
 }
